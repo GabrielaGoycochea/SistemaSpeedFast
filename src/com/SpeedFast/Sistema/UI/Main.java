@@ -13,18 +13,24 @@ import com.SpeedFast.Sistema.Model.PedidoExpress;
 public class Main {
     public static void main(String[] args) {
 
-        Pedido pedido1 = new PedidoComida(01,"San pablo 1920, depto 21");
-        Pedido pedido2 = new PedidoEnvio(02,"Pje Uno 0402",2);
-        Pedido pedido3 = new PedidoExpress(03,"Av Molina 234");
 
-        pedido1.asignarRepartidor();
+        Pedido pedido1 = new PedidoComida(1,"San pablo 1920, depto 21",2);
+        Pedido pedido2 = new PedidoEnvio(2,"Pje Uno 0402",3,8);
+        Pedido pedido3 = new PedidoExpress(3,"Av Molina 234",6);
+
         pedido1.asignarRepartidor("Juan");
-
-        pedido2.asignarRepartidor();
         pedido2.asignarRepartidor("Marcelo");
-
-        pedido3.asignarRepartidor();
         pedido3.asignarRepartidor("Marcos");
+
+
+        Pedido[] pedidos ={pedido1,pedido2,pedido3};
+
+        for(Pedido p : pedidos){
+            p.mostrarResumen();
+            System.out.println("Tiempo estimado de entrega: "+ p.calcularTiempoPedido()+ " minutos");
+            System.out.println();
+        }
+
 
     }
 }

@@ -8,22 +8,23 @@ public class PedidoComida extends Pedido {
      */
 
 
-    public PedidoComida(int idPedido, String direccion) {
-        super(idPedido, direccion, "comida");
+    public PedidoComida(int idPedido, String direccion,double distaciaPedido) {
+        super(idPedido, direccion,distaciaPedido,"comida");
+    }
+
+    @Override
+    public int calcularTiempoPedido(){
+        return (int)(15 +(2*distanciaPedido));
+
     }
 
     @Override
     public void asignarRepartidor(){
-        System.out.println("\nPedido de comida.");
-        System.out.println("Buscando repartidor con mochila térmica...");
     }
 
     @Override
     public void asignarRepartidor(String nombreRepartidor){
-        System.out.println("Validando que posea mochila términa...");
-        System.out.println("Confirmado.");
-        System.out.println("Repartidor "+nombreRepartidor+ " asignado al pedido de comida");
-        System.out.println("\n");
+        this.nombreRepartidor=nombreRepartidor;
 
     }
 

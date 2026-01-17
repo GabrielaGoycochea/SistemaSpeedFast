@@ -11,22 +11,24 @@ public class PedidoEnvio extends Pedido {
     private double peso;
 
 
-    public PedidoEnvio(int idPedido, String direccion, double peso) {
-        super(idPedido, direccion, "Encomienda");
+    public PedidoEnvio(int idPedido, String direccion, double distaciaPedido ,double peso) {
+        super(idPedido, direccion, distaciaPedido ,"Encomienda");
         this.peso = peso;
     }
 
     @Override
+    public int calcularTiempoPedido(){
+        return (int)(20+(1.5*distanciaPedido));
+    }
+
+    @Override
     public void asignarRepartidor(){
-        System.out.println("Solicitud envío de encomienda.");
-        System.out.println("Validando peso y embalaje del envío...");
     }
 
     @Override
     public void asignarRepartidor(String nombreRepartidor){
-        System.out.println("Peso de paquete: "+peso+ " kg, valido.");
-        System.out.println("Repartidor "+ nombreRepartidor+ " asignado para el envío");
-        System.out.println("\n");
+        this.nombreRepartidor=nombreRepartidor;
+
     }
 
 }
