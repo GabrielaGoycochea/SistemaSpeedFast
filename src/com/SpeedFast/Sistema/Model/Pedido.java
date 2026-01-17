@@ -4,7 +4,7 @@ public abstract class Pedido {
 
     /**
      * Clase padre se piden los datos generales que heredaran las subclases principales.
-     * Sobrecarga en la asignación de repartidor permitiendo uno por default y otro que pide el dato del repartidor.
+     * Sistema permite saber nombre de repartidor , distancia y tiempo de pedido
      */
 
     protected int idPedido;
@@ -26,9 +26,7 @@ public abstract class Pedido {
 
     public void asignarRepartidor(String nombreRepartidor){
         this.nombreRepartidor = nombreRepartidor;
-        /*System.out.println("Repartidor disponible encontrado!");
-        System.out.println("Repartidor "+nombreRepartidor +" asignado al pedido"+ idPedido);
-    */}
+    }
 
     public void mostrarResumen(){
         System.out.println("..:::RESUMEN DE PEDIDO:::..");
